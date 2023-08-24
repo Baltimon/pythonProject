@@ -3,15 +3,17 @@ def menu():
   print("1. START Game")
   print("2. END Game")
 
+
+# Define Global Vareables
 Letter1 = '_'
 Letter2 = '_'
 Letter3 = '_'
 Letter4 = '_'
 Letter5 = '_'
 win = False
-
 live = int(5)
 
+# prints the word in the current status
 def prntWord():
   global Letter1
   global Letter2
@@ -20,10 +22,12 @@ def prntWord():
   global Letter5
   print(Letter1 ," ",Letter2," ",Letter3," ",Letter4," ",Letter5)
 
+# prints how many Loves are left
 def prntLives():
   global live
   print("You have ", live, "  left!!")
   
+# Checks if the word is guest completely  
 def testWin():
   global Letter1
   global Letter2
@@ -34,6 +38,7 @@ def testWin():
    win= True
    print ("--------WIN--------")
 
+# runns the game
 def game():
   global live
   global Letter1
