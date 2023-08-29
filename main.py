@@ -12,6 +12,8 @@ Letter4 = '_'
 Letter5 = '_'
 win = False
 live = int(5)
+dkfjasöldkfj
+
 
 # prints the word in the current status
 def prntWord():
