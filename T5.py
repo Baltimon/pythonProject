@@ -1,5 +1,6 @@
 import random
-
+#Test (7,7) returns [7,7,7,7,7,7,7]
+#Test (4,-1)returns [reandom,random,random,random] example[4,-7,3,6,-1]
 def createList(size,x):
   list=[]
   if(x>0):
@@ -11,23 +12,33 @@ def createList(size,x):
       list.append(random.randrange(-10,10,1))
     
   return list
-
+#Test ([3,2])
+#prints:
+#list[0]=3
+#list[1]=2
 def printList(A):
   for i in range(len(A)):
     print("list[",i,"]=",A[i])
 
+#Test ([1,2,3,4,5,6,7,8],2) prints:
+#[1]=2
+#[3]=4
+#[5]=6
+#[7]=7
 def multiplesList(A,x):
   for i in range(len(A)):
     if(A[i]%x==0):
       print("[",i,"]=",A[i])
     
-  
+#Test ([3,3,3]) returns 9  
 def sumList(A):
   ret=0
   for i in A:
     ret=ret+i
   return ret
-  
+
+#Test ([-1,5,4]) returns -1
+#Test ([7,5,1,9,4567])returns 1
 def smalestList(A):
   min=A[0]
   for i in A:
@@ -62,7 +73,7 @@ def main():
       liste=createList(size,number)
       print("this is your List ",liste)
     
-      elif(choice==2):
+    elif(choice==2):
       printList(liste)
       
     elif(choice==3):
