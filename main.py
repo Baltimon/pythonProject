@@ -1,3 +1,5 @@
+
+
 def menu():
   print("Hello and Welcome to Hangman by Baltimon \s \s")
   print("1. START Game")
@@ -12,48 +14,75 @@ Letter4 = '_'
 Letter5 = '_'
 win = False
 live = int(5)
-dkfjasöldkfj
+words=["house","rat","bottle","tree"]
 
 
 # prints the word in the current status
 def prntWord():
-  global Letter1
-  global Letter2
-  global Letter3
-  global Letter4
-  global Letter5
-  print(Letter1 ," ",Letter2," ",Letter3," ",Letter4," ",Letter5)
+  #'global Letter1
+  #global Letter2
+  #global Letter3
+  #global Letter4
+  #global Letter5
+  #print(Letter1 ," ",Letter2," ",Letter3," ",Letter4," ",Letter5)
 
 # prints how many Loves are left
-def prntLives():
-  global live
-  print("You have ", live, "  left!!")
+def printLives():
+   global live
+   print("You have ", live, "  left!!")
   
 # Checks if the word is guest completely  
-def testWin():
-  global Letter1
-  global Letter2
-  global Letter3
-  global Letter4
-  global win
-  if (Letter1 != '_' and Letter2 != '_' and Letter3 != '_'  and Letter4 != '_'  and Letter5 != '_'):
-   win= True
-   print ("--------WIN--------")
+def testWin(solution):
+  for i in range(len(solution)):
+    if lolution[i].equals(" _ ")
+    return false
+  return true
+   
+  #global Letter1
+  #global Letter2
+  #global Letter3
+  #global Letter4
+  #global win
+  #if (Letter1 != '_' and Letter2 != '_' and Letter3 != '_'  and Letter4 != '_'  and Letter5 != '_'):
+  # win= True
+  # print ("--------WIN--------")
+  
+def selectWord():
+  x=int(len(words)*random()) #coose a randim index
+  word=words[x] #load the word from the index
+  listedword=split(word)
+  return listedword
+
+
 
 # runns the game
 def game():
+  #global Letter1
+  #global Letter2
+  #global Letter3
+  #global Letter4
+  #global Letter5
   global live
-  global Letter1
-  global Letter2
-  global Letter3
-  global Letter4
-  global Letter5
   global win
+  word=selectWord()
+  solution=[]
+  for i in range(len(word)):
+    solution[i]= " _ "
+  
   while(live > 0 and win == False):
     print("Guess the Letters ")
-    prntWord()
+    printLives()
+    prnt(solution)
     gues = input()
-    if( gues == 'h'):
+    found = False
+    for i in range(len.word):
+      if(gues.equals(word[i])):
+        solution= word[i]
+        found=True
+    if(found=False):
+      live=live-1  
+    
+    '''if( gues == 'h'):
       Letter1 =  'h'
       prntWord()
       prntLives()
@@ -75,8 +104,8 @@ def game():
       prntLives()
     else:
        live = live-1
-       prntLives()
-    testWin()
+    '''   prntLives()
+  win= testWin(solution)
   if(win == True):
     print("Your Won !!!")
   else:
