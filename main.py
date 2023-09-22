@@ -1,4 +1,4 @@
-
+from random import random
 
 def menu():
   print("Hello and Welcome to Hangman by Baltimon \s \s")
@@ -13,12 +13,12 @@ Letter3 = '_'
 Letter4 = '_'
 Letter5 = '_'
 win = False
-live = int(5)
+live = int(10)
 words=["house","rat","bottle","tree"]
 
 
 # prints the word in the current status
-def prntWord():
+#'def prntWord():
   #'global Letter1
   #global Letter2
   #global Letter3
@@ -28,15 +28,17 @@ def prntWord():
 
 # prints how many Loves are left
 def printLives():
-   global live
-   print("You have ", live, "  left!!")
+  global live
+  print("You have ", live, "  left!!")
   
 # Checks if the word is guest completely  
 def testWin(solution):
+  global win
   for i in range(len(solution)):
-    if lolution[i].equals(" _ ")
-    return false
-  return true
+    win = True
+    if (solution[i]==" _ "):
+      win = False
+    
    
   #global Letter1
   #global Letter2
@@ -50,7 +52,7 @@ def testWin(solution):
 def selectWord():
   x=int(len(words)*random()) #coose a randim index
   word=words[x] #load the word from the index
-  listedword=split(word)
+  listedword=list(word)
   return listedword
 
 
@@ -67,21 +69,22 @@ def game():
   word=selectWord()
   solution=[]
   for i in range(len(word)):
-    solution[i]= " _ "
+    solution.append(" _ ")
   
   while(live > 0 and win == False):
     print("Guess the Letters ")
     printLives()
-    prnt(solution)
+    print(solution)
     gues = input()
     found = False
-    for i in range(len.word):
-      if(gues.equals(word[i])):
-        solution= word[i]
+    for i in range(len(word)):
+      if(gues==(word[i])):
+        solution[i]= word[i]
         found=True
-    if(found=False):
+    if(found==False):
       live=live-1  
-    
+    testWin(solution)
+      
     '''if( gues == 'h'):
       Letter1 =  'h'
       prntWord()
@@ -104,10 +107,11 @@ def game():
       prntLives()
     else:
        live = live-1
-    '''   prntLives()
-  win= testWin(solution)
+    prntLives()'''
+
   if(win == True):
     print("Your Won !!!")
+    print(solution)
   else:
     print(" You Lost :(")
   
