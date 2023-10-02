@@ -63,6 +63,36 @@ def menu():
   print("6. Reverse diagonal sum")
   print("7. Exit")
 
+'''
+#Test: Matrix 
+112
+121
+211
+
+1.Print: 
+-------
+1 1 2
+1 2 1
+2 1 1 
+-------
+
+2. Sum: 12
+3. Average:1,333
+4. Matrix-Row: inpit 2,2
+            Output : 
+--------
+1 1 2
+1 2 1
+4 3 3
+--------
+5. Pos:
+[0][2]=2
+[1][1]=2
+[2][0]=2
+
+6. reverse diagonal sum: 6
+
+'''
 
 def main():
   
