@@ -4,7 +4,7 @@ from random import random
 filename="wordslist.txt"
 
 
-
+#prints the Menu
 def menu():
   print("Hello and Welcome to Hangman by Baltimon \s \s")
   print("1. START Game")
@@ -13,24 +13,9 @@ def menu():
 
 
 # Define Global Vareables
-#Letter1 = '_'
-#Letter2 = '_'
-#Letter3 = '_'
-#Letter4 = '_'
-#Letter5 = '_'
 win = False
 live = int(10)
-#words=["house","rat","bottle","tree"]
 
-
-# prints the word in the current status
-#'def prntWord():
-  #'global Letter1
-  #global Letter2
-  #global Letter3
-  #global Letter4
-  #global Letter5
-  #print(Letter1 ," ",Letter2," ",Letter3," ",Letter4," ",Letter5)
 
 # prints how many Loves are left
 def printLives():
@@ -44,17 +29,8 @@ def testWin(solution):
     win = True
     if (solution[i]==" _ "):
       win = False
-    
-   
-  #global Letter1
-  #global Letter2
-  #global Letter3
-  #global Letter4
-  #global win
-  #if (Letter1 != '_' and Letter2 != '_' and Letter3 != '_'  and Letter4 != '_'  and Letter5 != '_'):
-  # win= True
-  # print ("--------WIN--------")
-  
+      
+#Loads al words from the File and returns one random word
 def selectWord():
   file=open(filename,"r+")
   words=file.readlines()
@@ -69,11 +45,6 @@ def selectWord():
 
 # runns the game
 def game():
-  #global Letter1
-  #global Letter2
-  #global Letter3
-  #global Letter4
-  #global Letter5
   global live
   global win
   word=selectWord()
@@ -94,43 +65,19 @@ def game():
     if(found==False):
       live=live-1  
     testWin(solution)
-      
-    '''if( gues == 'h'):
-      Letter1 =  'h'
-      prntWord()
-      prntLives()
-    elif( gues == 'o'):
-      Letter2 = gues
-      prntWord()
-      prntLives()
-    elif( gues == 'u'):
-      Letter3 = gues
-      prntWord()
-      prntLives()
-    elif( gues == 's'):
-      Letter4 = gues
-      prntWord()
-      prntLives()
-    elif( gues == 'e'):
-      Letter5 = gues
-      prntWord()
-      prntLives()
-    else:
-       live = live-1
-    prntLives()'''
-
   if(win == True):
     print("Your Won !!!")
     print(solution)
   else:
     print(" You Lost :(")
   
+#Askes payer for a word and adds it to the List in the file  
 def addWord(word):
   file=open(filename,"a+")
   file.write("\n"+word)
   file.close
   
-  
+#prints al words in the file
 def printFile():
   file=open(filename,"r+")
   words=file.readlines()
