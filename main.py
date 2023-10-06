@@ -1,5 +1,10 @@
 from random import random
 
+#name of the File with the wirds
+filename="wordslist.txt"
+
+
+
 def menu():
   print("Hello and Welcome to Hangman by Baltimon \s \s")
   print("1. START Game")
@@ -51,7 +56,6 @@ def testWin(solution):
   # print ("--------WIN--------")
   
 def selectWord():
-  filename="wordslist.txt"
   file=open(filename,"r+")
   words=file.readlines()
   for i in range(len(words)):
@@ -121,7 +125,19 @@ def game():
   else:
     print(" You Lost :(")
   
+def addWord(word):
+  file=open(filename,"a+")
+  file.write("\n"+word)
+  file.close
   
+  
+def printFile():
+  file=open(filename,"r+")
+  words=file.readlines()
+  for i in range(len(words)):
+    words[i]=words[i].replace("\n","")
+  print(words)
+  file.close
 
 
 
@@ -136,7 +152,10 @@ def main():
       game()
     if (x==2):
       print("\nEnter your wornd\n")
-      wrd=input("enter yout new Word:"))
+      wrd=input("enter yout new Word:")
+      print("Your list is now ")
+      addWord(wrd)
+      printFile()
       #TODO
       #neue Methode adden die Wort in die datei speichert
     if (x==3):
