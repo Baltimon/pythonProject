@@ -1,10 +1,11 @@
+# Test: input: Hallo output: HALLO
 def uppercaseString(value):
   ret=""
   for i in range(len(value)):
     ret=ret+value[i].upper()
   return ret
     
-  
+#Test: input: Hallo,l output: 2
 def countRepetitions(value,c):
   counter=0
   for i in range(len(value)):
@@ -12,6 +13,7 @@ def countRepetitions(value,c):
       counter +=1
   return counter
   
+#Test: input: Hallo was gibts ? output :[5,9,12]
 def printPosSpaces(value):
   pos=[]
   for i in range(len(value)):
@@ -20,6 +22,7 @@ def printPosSpaces(value):
       
   print(pos)
   
+#Tesinput: Hallo output: H-a-l-l-o
 def spellString(value):
   ret=""
   for i in range(len(value)):
