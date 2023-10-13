@@ -12,51 +12,48 @@ def menu():
   print("3. END Game")
 
 
-# Define Global Vareables
-win = False
-live = int(10)
 
 
 # prints how many Loves are left
-def printLives():
-  global live
+def printLives(live):
   print("You have ", live, "  left!!")
   
 # Checks if the word is guest completely  
 def testWin(solution):
-  global win
+  win = False
   for i in range(len(solution)):
     win = True
     if (solution[i]==" _ "):
-      win = False
-      
+      return False
+  return win
+  
 #Loads al words from the File and returns one random word
 def selectWord():
   file=open(filename,"r+")
   words=file.readlines()
+  file.close
   for i in range(len(words)):
     words[i]=words[i].replace("\n","")
   x=int(len(words)*random()) #coose a randim index
-  word=words[x] #load the word from the index
+  word=words[x].upper() #load the word from the index
   listedword=list(word)
   return listedword
 
 
 
-# runns the game
+# runns the game1
 def game():
-  global live
-  global win
+  live=10
   word=selectWord()
   solution=[]
   for i in range(len(word)):
     solution.append(" _ ")
   
-  while(live > 0 and win == False):
+  while(live > 0 and not testWin(solution)):
     print("Guess the Letters ")
-    printLives()
+    printLives(live)
     print(solution)
-    gues = input()
+    gues = input().upper()
     found = False
     for i in range(len(word)):
       if(gues==(word[i])):
@@ -64,8 +61,8 @@ def game():
         found=True
     if(found==False):
       live=live-1  
-    testWin(solution)
-  if(win == True):
+    
+  if(testWin(solution)):
     print("Your Won !!!")
     print(solution)
   else:
