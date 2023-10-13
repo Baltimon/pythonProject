@@ -1,6 +1,6 @@
 <h1>Sticman</h1>
 
-<h2>The Problem<h2/>
+<h2>The Problem</h2>
 <p>I want to program a Hangman game. The Player has to guess a Word. But he has to guess the word before the Hangman is going to die. with every wrong letter the gallow grows until a stick man is going to hang and the Player loses. In this game the gallow is replaced by 10 Lives. with every wrong answer the Player loses a Live. If you guess the word before losing all lives you win. if not you lose.</p>
 
 
