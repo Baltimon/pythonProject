@@ -6,7 +6,7 @@ filename="wordslist.txt"
 
 #prints the Menu
 def menu():
-  print("Hello and Welcome to Hangman by Baltimon \s \s")
+  print("\nHello and Welcome to Hangman by Baltimon \n")
   print("1. START Game")
   print("2. Add Word")
   print("3. END Game")
